@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  backend:
+    container_name: 'laravel-backend-app'
+    build:
+      context: .
+    restart: always
+    ports:
+      - '80:80'
+    volumes:
+      - './laravel-app:/var/www/html/'
+      - ./apache-config:/etc/apache2/sites-enabled
